@@ -4,7 +4,7 @@ import './App.scss';
 function App() {
 	return (
 		<div className="App">
-			ddd
+			react-my-movie
 		</div>
 	);
 }
