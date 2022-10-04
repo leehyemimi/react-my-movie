@@ -18,7 +18,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/detail/:id" element={<Detail />} />
-				<Route path="*" element={<div>페이지가 없습니다.</div>} />
+				<Route path="*" element={<div>페이지가없습니다.</div>} />
 			</Routes>
 		</>
 	);
