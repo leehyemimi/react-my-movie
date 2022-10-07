@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
-import { Container, Row, Spinner } from 'react-bootstrap';
+
 import Movie from './../components/Movie';
+import Loading from "../components/Loading";
 
 function Home() {
 	const [loading, setLoading] = useState(true);
@@ -20,15 +22,7 @@ function Home() {
 	}, []);
 	return (
 		<Container>
-			{
-				loading ?
-					<div className="region-box">
-						<Spinner animation="border" role="status" variant="secondary" >
-							<span className="visually-hidden">Loading...</span>
-						</Spinner>
-					</div>
-					: null
-			}
+			{loading ? <Loading /> : null}
 			<Row>
 				{
 					movies.map((movies) => {
