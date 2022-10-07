@@ -1,20 +1,14 @@
 
 import './App.scss';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { Navbar, Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
+import Header from "./components/Header";
 import Home from "./routes/Home";
-import Detail from "./components/Detail";
-
+import Detail from "./routes/Detail";
 
 function App() {
-	const navigate = useNavigate();
 	return (
 		<>
-			<Navbar bg="light">
-				<Container>
-					<Navbar.Brand onClick={() => { navigate('/') }}>HOME</Navbar.Brand>
-				</Container>
-			</Navbar>
+			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/detail/:id" element={<Detail />} />
