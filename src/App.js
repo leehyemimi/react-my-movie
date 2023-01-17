@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { Row, Col, Container } from 'react-bootstrap';
-import Movie from "./components/Movie";
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from "./page/Home";
+import Detail from "./page/Detail";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -18,18 +19,12 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
-			{loading ? <h2>로딩중...</h2> : null}
-			<Container>
-				<Row>
-					{movies.map((movie, i) =>
-						<Col sm key={movie.id}>
-							<Movie movie={movie} />
-						</Col>
-					)}
-				</Row>
-			</Container>
-		</div>
+		<>
+			<Routes>
+				<Route path="/" element={<Home loading={loading} movies={movies} />} />
+				<Route path="/detail/:id" element={<Detail movies={movies} />} />
+			</Routes>
+		</>
 	);
 }
 

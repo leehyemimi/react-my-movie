@@ -1,6 +1,8 @@
 import { Button, Card, Badge } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 
 function Movie({ movie }) {
+	const location = useLocation();
 	return (
 		<Card style={{ width: '18rem' }}>
 			<Card.Img variant="top" src={movie.medium_cover_image} />
