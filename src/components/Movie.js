@@ -1,8 +1,8 @@
 import { Button, Card, Badge } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Movie({ movie }) {
-	const location = useLocation();
+	const navigate = useNavigate();
 	return (
 		<Card style={{ width: '18rem' }}>
 			<Card.Img variant="top" src={movie.medium_cover_image} />
@@ -16,7 +16,7 @@ function Movie({ movie }) {
 						)
 					}
 				</Card.Text>
-				<Button variant="dark">자세히 보기</Button>
+				<Button variant="dark" onClick={() => { navigate('/detail/' + movie.id) }}>자세히 보기</Button>
 			</Card.Body>
 		</Card>
 	);

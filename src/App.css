@@ -1,17 +1,19 @@
+.container {
+	padding: 50px 0;
+}
+
 .card {
 	margin-bottom: 15px;
 	height: 680px;
 }
+
 .badge {
 	margin-right: 5px;
 }
 
-.btn {
+.card .btn {
 	position: absolute;
 	left: 10px;
 	bottom: 10px;
 	width: 94%;
-}
-
-.detail-box {
 }
