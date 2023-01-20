@@ -1,9 +1,8 @@
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function Detail({ movies }) {
-	let navigate = useNavigate();
 	let { id } = useParams();
 	let item = movies.find((x) => x.id == id);
 	return (
@@ -22,7 +21,7 @@ function Detail({ movies }) {
 								}
 							</dd>
 							<dd>
-								<Button variant="dark" onClick={() => { navigate(item.url) }}>자세히보기</Button>
+								<Button variant="dark" href={item.url} target="_blank">자세히보기</Button>
 							</dd>
 						</dl>
 					</Col>

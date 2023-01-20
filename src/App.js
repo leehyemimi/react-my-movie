@@ -23,6 +23,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home loading={loading} movies={movies} />} />
 				<Route path="/detail/:id" element={<Detail movies={movies} />} />
+				<Route path="*" element={<div>빈페이지</div>}></Route>
 			</Routes>
 		</>
 	);
